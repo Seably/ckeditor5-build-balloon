@@ -14,6 +14,8 @@ import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
+
+import SeablyHeadingButtonsUI from './seablyheadingbuttonsui';
 import CleanOLs from './cleanols';
 
 export default class BalloonEditor extends BalloonEditorBase {}
@@ -24,9 +26,10 @@ BalloonEditor.builtinPlugins = [
 	Bold,
 	Italic,
 	Heading,
+	SeablyHeadingButtonsUI,
+	Paragraph,
 	Link,
 	List,
-	Paragraph,
 	PasteFromOffice,
 	CleanOLs
 ];
@@ -35,8 +38,8 @@ BalloonEditor.builtinPlugins = [
 BalloonEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading',
-			'|',
+			'heading1',
+			'heading2',
 			'bold',
 			'italic',
 			'link',
