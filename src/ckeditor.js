@@ -17,6 +17,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 
 import SeablyHeadingButtonsUI from './seablyheadingbuttonsui';
 import CleanOLs from './cleanols';
+import CleanNBSPs from './cleanNBSPs';
 
 export default class BalloonEditor extends BalloonEditorBase {}
 
@@ -31,7 +32,8 @@ BalloonEditor.builtinPlugins = [
 	Link,
 	List,
 	PasteFromOffice,
-	CleanOLs
+	CleanOLs,
+	CleanNBSPs
 ];
 
 // Editor configuration.
