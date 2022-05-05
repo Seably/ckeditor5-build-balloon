@@ -42,11 +42,13 @@ const plugins = [
 const config = {
 	toolbar: {
 		items: [
-			'heading1',
-			'heading2',
 			'bold',
 			'italic',
 			'link',
+			'|',
+			'heading1',
+			'heading2',
+			'|',
 			'bulletedList'
 		]
 	},
