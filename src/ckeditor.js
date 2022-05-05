@@ -3,8 +3,9 @@
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
-// The editor creator to use.
+// The editor creators to use.
 import BalloonEditorBase from '@ckeditor/ckeditor5-editor-balloon/src/ballooneditor';
+import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -19,10 +20,11 @@ import SeablyHeadingButtonsUI from './seablyheadingbuttonsui';
 import CleanOLs from './cleanols';
 import CleanNBSPs from './cleanNBSPs';
 
-export default class BalloonEditor extends BalloonEditorBase {}
+class BalloonEditor extends BalloonEditorBase {}
+class InlineEditor extends InlineEditorBase {}
 
-// Plugins to include in the build.
-BalloonEditor.builtinPlugins = [
+// Plugins to include in the builds.
+const plugins = [
 	Essentials,
 	Bold,
 	Italic,
@@ -36,8 +38,8 @@ BalloonEditor.builtinPlugins = [
 	CleanNBSPs
 ];
 
-// Editor configuration.
-BalloonEditor.defaultConfig = {
+// Default config for the builds.
+const config = {
 	toolbar: {
 		items: [
 			'heading1',
@@ -62,4 +64,14 @@ BalloonEditor.defaultConfig = {
 			}
 		}
 	}
+};
+
+// Set defaults
+BalloonEditor.builtinPlugins = plugins;
+BalloonEditor.defaultConfig = config;
+InlineEditor.builtinPlugins = plugins;
+InlineEditor.defaultConfig = config;
+
+export default {
+	BalloonEditor, InlineEditor
 };
