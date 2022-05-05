@@ -5,7 +5,7 @@
 
 // The editor creators to use.
 import BalloonEditorBase from '@ckeditor/ckeditor5-editor-balloon/src/ballooneditor';
-import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
+import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -21,7 +21,7 @@ import CleanOLs from './cleanols';
 import CleanNBSPs from './cleanNBSPs';
 
 class BalloonEditor extends BalloonEditorBase {}
-class InlineEditor extends InlineEditorBase {}
+class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the builds.
 const plugins = [
@@ -69,9 +69,9 @@ const config = {
 // Set defaults
 BalloonEditor.builtinPlugins = plugins;
 BalloonEditor.defaultConfig = config;
-InlineEditor.builtinPlugins = plugins;
-InlineEditor.defaultConfig = config;
+ClassicEditor.builtinPlugins = plugins;
+ClassicEditor.defaultConfig = config;
 
 export default {
-	BalloonEditor, InlineEditor
+	BalloonEditor, ClassicEditor
 };
