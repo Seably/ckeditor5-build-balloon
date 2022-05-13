@@ -59,12 +59,16 @@ module.exports = {
 			path.resolve( __dirname, './src/theme/icons/italic.svg' )
 		),
 		new webpack.NormalModuleReplacementPlugin(
-			/link\.svg/,
+			/\/link\.svg/,
 			path.resolve( __dirname, './src/theme/icons/link.svg' )
 		),
 		new webpack.NormalModuleReplacementPlugin(
 			/bulletedlist\.svg/,
 			path.resolve( __dirname, './src/theme/icons/bulletedlist.svg' )
+		),
+		new webpack.NormalModuleReplacementPlugin(
+			/unlink\.svg/,
+			path.resolve( __dirname, './src/theme/icons/unlink.svg' )
 		)
 	],
 
