@@ -9,7 +9,7 @@
 
 const path = require( 'path' );
 const webpack = require( 'webpack' );
-const { bundler, styles } = require( '@ckeditor/ckeditor5-dev-utils' );
+const { styles } = require( '@ckeditor/ckeditor5-dev-utils' );
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
 
@@ -21,7 +21,7 @@ module.exports = {
 
 	output: {
 		// The name under which the editor will be exported.
-		library: 'BalloonEditor',
+		library: 'CKEDITOR',
 
 		path: path.resolve( __dirname, 'build' ),
 		filename: 'ckeditor.js',
@@ -48,13 +48,28 @@ module.exports = {
 		new CKEditorWebpackPlugin( {
 			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
 			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.js).
-			language: 'en',
-			additionalLanguages: 'all'
+			language: 'en'
 		} ),
-		new webpack.BannerPlugin( {
-			banner: bundler.getLicenseBanner(),
-			raw: true
-		} )
+		new webpack.NormalModuleReplacementPlugin(
+			/bold\.svg/,
+			path.resolve( __dirname, './src/theme/icons/bold.svg' )
+		),
+		new webpack.NormalModuleReplacementPlugin(
+			/italic\.svg/,
+			path.resolve( __dirname, './src/theme/icons/italic.svg' )
+		),
+		new webpack.NormalModuleReplacementPlugin(
+			/\/link\.svg/,
+			path.resolve( __dirname, './src/theme/icons/link.svg' )
+		),
+		new webpack.NormalModuleReplacementPlugin(
+			/bulletedlist\.svg/,
+			path.resolve( __dirname, './src/theme/icons/bulletedlist.svg' )
+		),
+		new webpack.NormalModuleReplacementPlugin(
+			/unlink\.svg/,
+			path.resolve( __dirname, './src/theme/icons/unlink.svg' )
+		)
 	],
 
 	module: {
@@ -80,7 +95,7 @@ module.exports = {
 							},
 							minify: true
 						} )
-					},
+					}
 				]
 			}
 		]
