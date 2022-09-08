@@ -19,6 +19,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import SeablyHeadingButtonsUI from './seablyheadingbuttonsui';
 import CleanOLs from './cleanols';
 import CleanNBSPs from './cleanNBSPs';
+import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 
 class BalloonEditor extends BalloonEditorBase {}
 class ClassicEditor extends ClassicEditorBase {}
@@ -35,7 +36,8 @@ const plugins = [
 	List,
 	PasteFromOffice,
 	CleanOLs,
-	CleanNBSPs
+	CleanNBSPs,
+	WordCount
 ];
 
 // Default config for the builds.
